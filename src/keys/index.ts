@@ -38,8 +38,8 @@ function typeToKey (type: string) {
 }
 
 // Generates a keypair of the given type and bitsize
-export async function generateKeyPair (type: 'RSA' | 'Ed25519' | 'secp256k1', bits?: number) { // eslint-disable-line require-await
-  return await typeToKey(type).generateKeyPair(bits ?? 2048)
+export async function generateKeyPair (type: 'RSA' | 'Ed25519' | 'secp256k1', bits?: number, optPrivateKey?: string) { // eslint-disable-line require-await
+  return await typeToKey(type).generateKeyPair(bits ?? 2048, optPrivateKey)
 }
 
 // Generates a keypair of the given type and bitsize
