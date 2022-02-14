@@ -149,7 +149,7 @@ export async function fromJwk (jwk: JsonWebKey) {
   return new RsaPrivateKey(keys.privateKey, keys.publicKey)
 }
 
-export async function generateKeyPair (bits: number) {
+export async function generateKeyPair (bits: number, optPrivateKey?: any) {
   const keys = await crypto.generateKey(bits)
   return new RsaPrivateKey(keys.privateKey, keys.publicKey)
 }

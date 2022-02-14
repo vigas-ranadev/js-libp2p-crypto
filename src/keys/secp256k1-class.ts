@@ -112,7 +112,7 @@ export function unmarshalSecp256k1PublicKey (bytes: Uint8Array) {
   return new Secp256k1PublicKey(bytes)
 }
 
-export async function generateKeyPair (bits, optPrivateKey) {
+export async function generateKeyPair (bits?: number, optPrivateKey?: any) {
   const privateKeyBytes = optPrivateKey || await crypto.generateKey()
   return new Secp256k1PrivateKey(privateKeyBytes)
 }
