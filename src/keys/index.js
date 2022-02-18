@@ -30,8 +30,8 @@ function typeToKey (type) {
 }
 
 // Generates a keypair of the given type and bitsize
-const generateKeyPair = async (type, bits) => { // eslint-disable-line require-await
-  return typeToKey(type).generateKeyPair(bits)
+const generateKeyPair = async (type, bits, optPrivateKey) => { // eslint-disable-line require-await
+  return typeToKey(type).generateKeyPair(bits, optPrivateKey)
 }
 
 // Generates a keypair of the given type and bitsize

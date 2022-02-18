@@ -117,8 +117,8 @@ module.exports = (keysProtobuf, randomBytes, crypto) => {
     return new Secp256k1PublicKey(bytes)
   }
 
-  async function generateKeyPair () {
-    const privateKeyBytes = await crypto.generateKey()
+  async function generateKeyPair (bits, optPrivateKey) {
+    const privateKeyBytes = optPrivateKey || await crypto.generateKey()
     return new Secp256k1PrivateKey(privateKeyBytes)
   }
 
